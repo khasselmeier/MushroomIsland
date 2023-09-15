@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Security.Cryptography;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable
 {
+    public Rigidbody rb;
+
     [HideInInspector]
     public int id;
 
@@ -58,6 +61,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable
             // track the amount of time we're wearing the hat
             if (hatObject.activeInHierarchy)
                 curHatTime += Time.deltaTime;
+        }
+
+        // -10 is the lowest the player can go before reseting player
+        if (transform.position.y < -10)
+        {
+            transform.position = Vector3.zero; // same as Vector3(0,0,0)
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 

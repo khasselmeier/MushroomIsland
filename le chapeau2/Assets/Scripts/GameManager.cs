@@ -101,5 +101,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LeaveRoom();
         NetworkManager.instance.ChangeScene("Menu");
+        Destroy(NetworkManager.instance.gameObject);
     }
 }
