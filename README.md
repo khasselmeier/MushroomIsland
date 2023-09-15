@@ -1,2 +1,2 @@
 # MushroomIsland
- Play: khasselmeier.github.io/MushroomIsland/
+ Play: https://khasselmeier.github.io/MushroomIsland/
