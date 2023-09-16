@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable
         // -10 is the lowest the player can go before reseting player
         if (transform.position.y < -10)
         {
-            transform.position = Vector3.zero; // same as Vector3(0,0,0)
+            transform.position = Vector3.zero;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
